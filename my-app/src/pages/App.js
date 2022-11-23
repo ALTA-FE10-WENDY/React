@@ -27,20 +27,20 @@ class App extends Component {
     }
   }
 
-  // getData() {
-  //   axios
-  //     .get(`https://fakestoreapi.com/products`)
-  //     .then((response) => {
-  //       this.setState({ data: response.data });
-  //     })
-  //     .catch((error) => {
-  //       console.warn("failed to fetch from API")
-  //     })
-  // }
+  getData() {
+    axios
+      .get(`https://api.themoviedb.org/3/movie/now_playing?api_key=45396c865133efebe99ead193799eb62&language=en-US&page=1`)
+      .then((response) => {
+        this.setState({ data: response.data });
+      })
+      .catch((error) => {
+        console.warn("failed to fetch from API")
+      })
+  }
 
   componentDidMount() {
-    // this.getData();
-    this.getAllProducts();
+    this.getData();
+    // this.getAllProducts();
   }
 
   render() {
